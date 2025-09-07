@@ -12,12 +12,13 @@ def main():
     y = SCREEN_HEIGHT / 2
     player = Player(x, y)
     
+    
 
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
-        
+        player.update(dt)
         screen.fill ("black")
         player.draw(screen)
         pygame.display.flip()
