@@ -16,7 +16,6 @@ class Player(CircleShape):
         return [a, b, c]
     
     def draw(self, screen):
-        screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
         pygame.draw.polygon(screen, "white", self.triangle(), 2)
 
     def rotate(self, dt):
