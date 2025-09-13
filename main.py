@@ -29,11 +29,18 @@ def main():
             if event.type == pygame.QUIT:
                 return
         updatable.update(dt)
+        if player.timer > 0:
+            player.timer -= dt
         for instance in asteroids:
             if player.collision(instance) == True:
                 print ("Game over!", flush=True)
                 pygame.quit()
                 sys.exit()
+        for instance in asteroids:
+            for shot in shots:
+                if shot.collision(instance) == True:
+                    shot.kill()
+                    instance.kill()
         screen.fill ("black")
         for sprite in drawable:
             sprite.draw(screen)
