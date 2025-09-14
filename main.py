@@ -40,7 +40,7 @@ def main():
             for shot in shots:
                 if shot.collision(instance) == True:
                     shot.kill()
-                    instance.kill()
+                    instance.split()
         screen.fill ("black")
         for sprite in drawable:
             sprite.draw(screen)
